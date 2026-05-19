@@ -13,7 +13,7 @@ class SeasonSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach (['Spring', 'Summer', 'Autumn', 'Winter'] as $season) {
+        foreach (['spring', 'summer', 'autumn', 'winter'] as $season) {
             Season::firstOrCreate(['season_name' => $season]);
         }
     }
