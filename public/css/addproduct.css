@@ -1,0 +1,228 @@
+
+/* ── Page wrapper ── */
+.addtoproduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+/* ── Page header ── */
+.addtoproduct h2 {
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: yellowgreen;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow:  0 0 15px white;
+    text-align: center;
+    margin-bottom: 6px;
+    font-family: "Poppins", sans-serif;
+}
+
+.addtoproduct h1 {
+    /* font-size: 28px; */
+    font-weight: 600;
+    color: aliceblue;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.addtoproduct p.form-sub {
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ── Form card ── */
+.addtoproduct form {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    box-shadow:  0 0 7px wheat;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    /* box-sizing: border-box; */
+}
+
+/* ── Table reset ── */
+.addtoproduct table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.addtoproduct th,
+.addtoproduct td {
+    border: none;
+    text-align: left;
+    padding: 0;
+    /* font-size: larger; */
+}
+
+/* ── Field labels ── */
+.addtoproduct th {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 200, 0.9);
+    letter-spacing: 0.03em;
+    padding-bottom: 6px;
+    padding-top: 14px;
+}
+
+/* ── Table cells ── */
+.addtoproduct td {
+    padding-left: 0;
+    padding-top: 0;
+}
+
+/* ── Text inputs & textareas ── */
+.addtoproduct input,
+.addtoproduct textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.696);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: aliceblue;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+}
+
+.addtoproduct input::placeholder,
+.addtoproduct textarea::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.addtoproduct input:hover,
+.addtoproduct textarea:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.addtoproduct input:focus,
+.addtoproduct textarea:focus {
+    border-color: yellowgreen;
+    box-shadow: 0 0 8px rgba(154, 205, 50, 0.2);
+}
+
+/* ── Selects ── */
+.addtoproduct select {
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: aliceblue;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.addtoproduct select:focus {
+    border-color: yellowgreen;
+    box-shadow: 0 0 8px rgba(154, 205, 50, 0.2);
+}
+
+.addtoproduct select option {
+    background: #1a1a1a;
+    color: aliceblue;
+}
+
+/* ── Number input override ── */
+input[type="number"] {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.837);
+    background: rgba(0, 0, 0, 0.3);
+    color: aliceblue;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="number"]:focus {
+    border-color: yellowgreen;
+    box-shadow: 0 0 8px rgba(154, 205, 50, 0.2);
+}
+
+/* ── File input ── */
+input[type="file"] {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed rgba(255, 255, 255, 0.799);
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="file"]:hover {
+    border-color: yellowgreen;
+}
+
+/* ── Image URL section ── */
+.img-url {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+/* ── Submit button ── */
+.butn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.butn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 18px;
+    border: 1px solid yellowgreen;
+    background: rgba(153, 205, 50, 0.047);
+    color: yellowgreen;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.butn button:hover {
+    background: yellowgreen;
+    color: #0f172a;
+    box-shadow: 0 0 12px rgba(154, 205, 50, 0.35);
+    scale: 1;
+}

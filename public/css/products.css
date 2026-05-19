@@ -1,0 +1,97 @@
+/* ── TABLE WRAPPER ── */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    /* subtle scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.table-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ── TABLE ── */
+table {
+    min-width: 1200px;
+    width: 100%;
+    border-collapse: collapse;
+    background: #0d0d0d;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* ── HEADER ── */
+thead tr {
+    background: rgba(255, 255, 255, 0.08);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+    color: aqua;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 14px 18px;
+    text-align: center;
+    white-space: nowrap;
+    user-select: none;
+}
+
+
+/* ── BODY ROWS ── */
+td {
+    color: rgba(255, 255, 255, 0.88);
+    padding: 12px 18px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    transition: background 0.2s;
+}
+
+/* alternating row tint */
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* row hover highlight */
+tbody tr:hover {
+    background: rgba(0, 255, 255, 0.07);
+    cursor: default;
+}
+
+/* last row — no dangling border */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ── FOOTER ROW (optional <tfoot>) ── */
+tfoot tr {
+    background: rgba(255, 255, 255, 0.06);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+tfoot td {
+    color: yellowgreen;
+    font-weight: 600;
+    font-size: 13px;
+}

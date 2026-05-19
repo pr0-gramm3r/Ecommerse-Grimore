@@ -1,0 +1,59 @@
+/* GLOBAL FIX */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY */
+body {
+    min-height: 100vh;
+    max-width: 100%;
+    /* margin: 0 auto; FIX: This centers your entire page */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column; /* Helps the footer stay at the bottom */
+
+    background: url("https://c4.wallpaperflare.com/wallpaper/413/925/249/minimalism-abstract-pattern-digital-art-wallpaper-preview.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* remove default list styling */
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* each item */
+.nav-item {
+    margin: 8px 0;
+    font-size: 1.2rem;
+    justify-content: center;
+}
+
+/* links */
+.nav-link {
+    text-decoration: none;
+    color: yellowgreen;
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+/* hover effect */
+.nav-link:hover {
+    background: yellowgreen;
+    color: #0f172a;
+    transform: translateX(5px);
+}
+
+/* active click feel */
+.nav-link:active {
+    transform: scale(0.95);
+}
+
