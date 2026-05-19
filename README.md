@@ -1,59 +1,222 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Ecommerse
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based fashion e-commerce web application with customer shopping flows, merchant product management, Google authentication, cart handling, and image uploads through Cloudinary.
 
-## About Laravel
+The project is built as a server-rendered Laravel app using Blade templates, custom CSS, vanilla JavaScript, Laravel authentication, merchant guards, migrations, seeders, and Vite for frontend asset bundling.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Customer signup, login, logout, account management, and password reset
+- Google authentication for customers and merchants
+- Product browsing, product detail pages, and keyword search
+- Shopping cart with add, remove, quantity update, and buy-now checkout flow
+- Merchant signup/login using a separate merchant guard
+- Merchant dashboard for managing profile details and listed products
+- Product creation with category, season, stock, price, status, keywords, and up to four images
+- Cloudinary-backed image upload support
+- Seeded product filters for categories and seasons
+- Admin-style product listing page
+- Custom Blade views, CSS, and JavaScript for the storefront experience
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tech Stack
 
-## Learning Laravel
+- **Backend:** Laravel 12, PHP 8.2+
+- **Frontend:** Blade, CSS, JavaScript, Vite
+- **Database:** MySQL by default
+- **Auth:** Laravel auth, custom merchant guard, Laravel Socialite
+- **Media:** Cloudinary Laravel SDK
+- **Testing:** Pest / PHPUnit
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Project Structure
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```text
+app/
+  Http/Controllers/     Application controllers
+  Http/Middleware/      Merchant auth middleware
+  Models/               Eloquent models
+database/
+  migrations/           Users, merchants, products, carts, orders, categories, seasons
+  seeders/              Category and season seed data
+public/
+  css/                  Page-level stylesheets
+  js/                   Page-level browser scripts
+resources/views/
+  authanticate/         Customer auth views
+  merchant/             Merchant auth and dashboard views
+  nav-links/            Storefront, cart, account, product, and search views
+routes/
+  web.php               Web routes for customers, merchants, products, cart, and auth
+```
 
-## Laravel Sponsors
+## Requirements
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- PHP 8.2 or newer
+- Composer
+- Node.js and npm
+- MySQL or another Laravel-supported database
+- Cloudinary account, only if you want hosted image uploads
+- Google OAuth credentials, only if you want Google login
 
-### Premium Partners
+## Getting Started
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Clone the repository:
 
-## Contributing
+```bash
+git clone https://github.com/pr0-gramm3r/Ecommerse.git
+cd Ecommerse
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Install PHP dependencies:
 
-## Code of Conduct
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Install frontend dependencies:
 
-## Security Vulnerabilities
+```bash
+npm install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Create your environment file:
+
+```bash
+cp .env.example .env
+```
+
+Generate the Laravel app key:
+
+```bash
+php artisan key:generate
+```
+
+Update `.env` with your database settings:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=ecommerse
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Run migrations and seeders:
+
+```bash
+php artisan migrate --seed
+```
+
+Start the Laravel server:
+
+```bash
+php artisan serve
+```
+
+Start Vite in another terminal:
+
+```bash
+npm run dev
+```
+
+Open the app at:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Optional Environment Setup
+
+For Cloudinary uploads, add your Cloudinary credentials to `.env`:
+
+```env
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
+
+For Google login, configure Laravel Socialite credentials:
+
+```env
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+GOOGLE_REDIRECT_URI=http://127.0.0.1:8000/auth/google-callback
+```
+
+For password reset emails, replace the default log mailer with real SMTP settings:
+
+```env
+MAIL_MAILER=smtp
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+## Useful Commands
+
+Run the test suite:
+
+```bash
+php artisan test
+```
+
+Build production assets:
+
+```bash
+npm run build
+```
+
+Clear cached Laravel configuration:
+
+```bash
+php artisan optimize:clear
+```
+
+Run Laravel, queue worker, and Vite together using the Composer script:
+
+```bash
+composer run dev
+```
+
+## Main Routes
+
+| Area | Route | Purpose |
+| --- | --- | --- |
+| Storefront | `/` | Home page with products, categories, and seasons |
+| Products | `/product/{id}` | Product detail page |
+| Search | `/search` | Search products by name or keywords |
+| Customer Auth | `/login`, `/signup` | Customer login and registration |
+| Cart | `/cart` | Customer cart |
+| Account | `/My-account` | Customer account page |
+| Merchant Auth | `/merchant/login`, `/merchant/signup` | Merchant login and registration |
+| Merchant Dashboard | `/merchant/dashboard` | Merchant product/profile dashboard |
+| Add Product | `/merchant/product/create` | Create a merchant product |
+| Admin Products | `/products` | Product listing page |
+
+## Seed Data
+
+The database seeders create:
+
+- Categories: `Men`, `Women`, `Kids`
+- Seasons: `Spring`, `Summer`, `Autumn`, `Winter`
+- A sample test user from the default Laravel factory
+
+Run them any time with:
+
+```bash
+php artisan db:seed
+```
+
+## Notes
+
+- Product images can be added either through Cloudinary uploads or image URLs.
+- Merchant routes are protected with the custom `auth.merchant` middleware.
+- Customer cart routes require normal Laravel authentication.
+- The repository currently uses Blade pages and public CSS/JS assets rather than a SPA frontend.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project uses the MIT license inherited from the Laravel application skeleton.
