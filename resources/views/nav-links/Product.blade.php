@@ -19,6 +19,11 @@
             alt="Slider Image 3" 
             class="slider-image" 
             onclick="setImage(this.src)">
+        
+        <img src="{{ asset($product->product_image4) }}" 
+            alt="Slider Image 4" 
+            class="slider-image" 
+            onclick="setImage(this.src)">
     </div>
 
     <div class="image-view">
