@@ -7,7 +7,7 @@
         <div class="home">
             <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="{{ route('Stuffs') }}">Products</a></li>
+                {{-- <li><a href="{{ route('Stuffs') }}">Products</a></li> --}}
 {{-- 
                 @guest                       
                     <li><a href="{{ route('show.signup') }}">Register</a></li>

@@ -1,4 +1,8 @@
 @include('includes.merchantheader')
+<a href="{{ route('merchant.dashboard') }}" style="color: aliceblue; text-decoration: none;">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+</a>
 <div class="addtoproduct">
 
     <h2>All Fields are Required , Kindly Fill All the Fields</h2>
